@@ -1,0 +1,25 @@
+<div class="container p-0">
+    <div class="userlist">
+        <div class="w-100">
+            <div class="col-12 p-2 bg-secondary border-bottom border-light">
+                <div class="">
+                    <img src="assets/search2.png" alt="" style="position: absolute" class="ml-3 mt-2">
+                    <input type="text" placeholder="Search or Filter your contact" class="form-control pl-5" style="border-radius: 30px; height: 6vh;" [(ngModel)]="userFilter">
+                </div>
+            </div>
+        </div>
+    
+        <div class="row p-0 w-100">
+            <div class="col-12 ml-2 text-small eachuser" *ngFor="let i=index;let user of finalUserArray | filterUser:userFilter">        
+                <div class="d-flex mt-2 ml-2 p-0 text-small border-bottom border-muted" (click)="sendUserId(user.userId,user)">
+                    <img src="{{user.picture}}" alt="user's Profile Picture" class="profilepic">
+                    <p class="ml-2">
+                        <small><b>{{user.username | uppercase}}</b></small><br>
+                        <small ><i>{{user.message}}</i></small>
+                    </p>
+                </div>         
+            </div>
+            
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+.formimage {
+    width: 70px;
+    height: 70px;
+    border-radius: 100px;
+}
+
+.bg {
+    /* background-image: url("/assets/img2.PNG"); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* height: 600px; */
+}

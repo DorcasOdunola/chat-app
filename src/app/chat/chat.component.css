@@ -1,0 +1,23 @@
+
+.profilepic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+}
+
+.upStyle {
+    z-index: -100; 
+    height: 16vh; 
+    /* background-color: rgba(252,226,237, 1) */
+    background-color: rgba(35,47,65, 1);
+}
+
+.houseAll {
+    /* z-index: 1000; */
+    margin-top: -4.5%; 
+    height: 89vh; 
+    /* background-color: rgba(252,226,237, 0.5); */
+    background-color: rgba(0,0,0, 0.3);
+    max-height: 90vh;
+    /* overflow-y: auto; */
+}

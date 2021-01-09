@@ -1,0 +1,45 @@
+<div class="container-fluid p-1">
+    <div class="row w-100 mt-4">
+        <div class="col-12 col-md-6 mx-auto p-4">
+            <div class="row m-4" style="height: 500px; background-color: rgba(35,47,65, 1);border-radius: 20px;">
+                <div class="col-7 p-3 bg-light" style="background-color: rgba(35,47,65, 1);">
+                    <div class="p-4 mt-5">
+                        <form action="" class="mt-5 pt-4">
+                            <mat-form-field appearance="legacy" class="w-100">
+                                <mat-label>Username or Email</mat-label>
+                                <input type="text" matInput placeholder="" name="usernameEmail" [(ngModel)]="usernameEmail">
+                            </mat-form-field>
+
+                            <mat-form-field appearance="legacy" class="w-100">
+                                <mat-label>Password</mat-label>
+                                <input type="password" matInput placeholder="" name="password" [(ngModel)]="password">
+                            </mat-form-field>
+                            <p class="text-danger text-small">{{showincorrect}}</p>
+
+                            <div>
+                                <button mat-raised-button (click)="loginUser()">SIGN IN</button>
+                                <span class="pl-3" style="color:silver">or</span>
+                                <button mat-button color="primary" routerLink="/signup">SIGN UP</button>
+                            </div>
+                        </form>
+                    </div>
+                   
+                </div>
+                <div class="col-5 p-3 my-auto">
+                    <div class="mt-5 pt-2">
+                        <h2 class="text-white mt-5">SIGN IN</h2>
+                        <p class="font-weight-lighter">
+                            <small class="text-white">
+                                Welcome to Sage ChatApp. Connect with family, friends and your loved ones.
+                                <br>
+                                Let Keep Rolling!
+                                <br><br><br><br><br><br><br><br><br>
+                               <i class="text-white h6"> SAGE</i>
+                            </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

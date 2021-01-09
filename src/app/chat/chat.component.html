@@ -1,0 +1,136 @@
+<div class="container-fluid bg-light">
+    <div class="row upStyle"></div>
+    <div class="container shadow houseAll">
+        <!-- DISPLAY ONLINE USER -->
+        <div class="row border-bottom border" style="height: 10vh;background-color: rgba(207,211,214, 1);">
+            <div class="d-flex ml-2 text-small p-2" (click)="onlineUserProfile(user)"  data-toggle="modal" data-target="#modelIdOnline">
+                <img src="{{user.picture}}" alt="user's Profile Picture" class="profilepic" >
+                <p class="ml-2 p-1">
+                    <span><b>{{user.username | uppercase}}</b></span><br>
+                    <small>{{user.phoneno}}</small>
+                </p>
+            </div> 
+            
+            <!-- MODAL USE IN DISPLAYING THE ONLINE USER -->
+            <div class="modal fade col-3 mt-2" id="modelIdOnline" style="margin-left: 7%;" *ngIf="onUserProfile">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content mt-2">
+                        <div class="modal-header p-2" style="background-color: rgba(35,47,65, 0.9) !important;">                           
+                            <img src="assets/leftarrow.png" alt="" class="close mt-1" data-dismiss="modal" aria-label="Close" style="margin-left: -3%">
+                           
+                            <h2 class="modal-title" class="text-white text-center pl-2 mt-3">Profile</h2>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row w-100">
+                                <div class="mx-auto col-8">                                    
+                                    <img src="{{onUserProfile.picture}}" alt="" style="width: 170px; height: 170px;" class="rounded-circle">
+                                </div>
+                            </div>                            
+                            <div class="border-bottom border-secondary mt-2">
+                                <small style="color: rgba(35,47,65, 1)" class="text-small">Name:</small><br>
+                                <span class="mt-2 h6 intialism">{{onUserProfile.fullname}}</span>
+                            </div>
+                            <div class="row">
+                                <div class="mt-2 col-6">
+                                    <div class="border-bottom border-secondary ">
+                                        <small style="color: rgba(35,47,65, 1)">Phone Number:</small><br>
+                                        <span class="mt-2 h6 intialism">{{onUserProfile.phoneno}}</span>
+                                    </div>
+                                </div>
+
+                                <div class="mt-2 col-6">
+                                    <div class="border-bottom border-secondary ">
+                                        <small class="text-small">Username:</small><br>
+                                        <span class="mt-2 h6 intialism">{{onUserProfile.username}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-3" style="background-color: rgba(35,47,65, 1) !important; color: silver;">
+                            <div class="border-bottom border-secondary mt-2">
+                                <small >Email:</small><br>
+                                <span class="mt-2 intialism">{{onUserProfile.email}}</span>
+                            </div>
+                            <div class="border-bottom border-secondary mt-2">
+                                <small >Address:</small><br>
+                                <span class="mt-2 intialism">{{onUserProfile.address}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- DISPLAY CHATTING USER -->
+            <div class="d-flex ml-5 pl-5 text-small p-2" *ngIf="chatUser" (click)="chatUserProfile(chatUser)" data-toggle="modal" data-target="#modelIdChat">
+                <img src="{{chatUser.picture}}" alt="user's Profile Picture" class="profilepic">
+                <p class="ml-2 p-1">
+                    <span><b>{{chatUser.username | uppercase}}</b></span><br>
+                    <small>{{chatUser.phoneno}}</small>
+                </p>
+            </div> 
+            <!-- MODAL USE IN DISPLAYING THE USER YOU ARE CHATTING WITH PROFILE -->
+            <div class="modal fade col-3 mt-2" id="modelIdChat" style="margin-left: 65%;" *ngIf="chtUserProfile">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header p-2" style="background-color: rgba(35,47,65, 1) !important;">
+                            <img src="assets/leftarrow.png" alt="" class="close mt-1" data-dismiss="modal" aria-label="Close" style="margin-left: -3%">
+                           
+                            <h2 class="modal-title" class="text-white text-center pl-2 mt-3">Profile</h2>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row w-100">
+                                <div class="mx-auto col-8">                                    
+                                    <img src="{{chtUserProfile.picture}}" alt="" style="width: 170px; height: 170px;" class="rounded-circle">
+                                </div>
+                            </div>
+                            <div class="border-bottom border-secondary mt-2">
+                                <small style="color: rgba(35,47,65, 1)" class="text-small">Name:</small><br>
+                                <span class="mt-2 h6 intialism">{{chtUserProfile.fullname}}</span>
+                            </div>
+                            <div class="row">
+                                <div class="mt-2 col-6">
+                                    <div class="border-bottom border-secondary ">
+                                        <small style="color: rgba(35,47,65, 1)">Phone Number:</small><br>
+                                        <span class="mt-2 h6 intialism">{{chtUserProfile.phoneno}}</span>
+                                    </div>
+                                </div>
+
+                                <div class="mt-2 col-6">
+                                    <div class="border-bottom border-secondary ">
+                                        <small class="text-small">Username:</small><br>
+                                        <span class="mt-2 h6 intialism">{{chtUserProfile.username}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-3" style="background-color: rgba(35,47,65, 1) !important; color: silver;">
+                            <div class="border-bottom border-secondary mt-2">
+                                <small >Email:</small><br>
+                                <span class="mt-2 intialism">{{chtUserProfile.email}}</span>
+                            </div>
+                            <div class="border-bottom border-secondary mt-2">
+                                <small >Address:</small><br>
+                                <span class="mt-2 intialism">{{chtUserProfile.address}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row p-0">
+            <!-- USERLIST COMPONENT -->
+            <div class="col-3 p-0" style="background-color: rgba(207,211,214, 0.7); height: 79vh; max-height: 79vh; overflow-y: auto;">
+                <app-userslist (addUserEvent)="getUserId($event)"></app-userslist>
+
+                <div class="ml-3 mt-2" style="cursor: pointer;" (click)="signOut()">
+                    <span><img src="assets/logout.png" alt="LogOut Icon"></span>
+                    <span>SIGN OUT</span>
+                </div>
+            </div>
+            <!-- USERCHAT COMPONENT -->
+            <div class="col-9 p-0">
+                <app-userschat></app-userschat>
+            </div>
+        </div>
+    </div>
+</div>

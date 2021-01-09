@@ -1,0 +1,24 @@
+.profilepic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+}
+
+.eachuser {
+    cursor: pointer;
+}
+
+::placeholder {
+    font-size: 10pt;
+    text-align: center;
+}
+
+.userlist {
+    height: 69vh !important;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+::-webkit-scrollbar{
+	width: 0px !important;
+}

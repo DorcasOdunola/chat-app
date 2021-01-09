@@ -1,0 +1,61 @@
+
+
+<div class="container-fluid" style="position: relative; ">
+           
+    <img src="assets/search.png" alt="searchIcon" class="float-right mr-3" data-toggle="collapse" data-target="#searchInp" style="margin-top:-43px;">
+   
+    <div class="collapse fixed-top" id="searchInp" style="margin-top: 8%;">
+        <input type="text" class="form-control col-5" style="margin-left: 40%;" [(ngModel)]="searchMsg">
+    </div>
+    <div class="row" style="height: 82vh; max-height: 82vh; ">
+        <div class="col-12">
+            <div class="p-3" style="height: 72vh; overflow-y: auto; ">
+                <span class="p-3 text-white" style="border-radius: 5px; background-color: rgba(35,47,65, 1);">{{hiFriends}}</span>
+                <div  class="p-1">
+                    <div class="row m-2 d-block" *ngFor="let i=index;let chat of getChatArray | filterMessage:searchMsg">
+                        <div class="col-4 p-2 m-1" *ngIf="chat.check"  style="border-radius: 5px; background-color: rgba(35,47,65, 1); margin-left: 60% !important; width: 50%;">
+                            <p  style="width: 100%;" class="p-1" *ngIf="chat.deleted">                              
+                                <i class="text-white">This message has been deleted</i><br> 
+                                <small class="float-right" style="color: silver;">{{chat.time}}</small>
+                                <span class="float-left" style="transform: scale(0.7);" [style.color]="chat.seen ? 'green' : 'red'">
+                                    <mat-icon>done_all</mat-icon>
+                                </span> 
+                            </p>  
+                            <p  style="width: 100%;" class="p-1" *ngIf="!chat.deleted">
+                                <span class="float-right" style="color: red; transform: scale(0.6); cursor: pointer;" (click)="delMessage(chat.msgId, chat.message)">
+                                    <mat-icon>delete</mat-icon>
+                                </span>                            
+                                <span class="text-white">{{chat.message}}</span><br>
+                                <small class="float-right" style="color: silver;">{{chat.time}}</small>
+                                <span class="float-left" style="font-size: 5px !important; transform: scale(0.7);" [style.color]="chat.seen ? 'green' : 'red'">
+                                    <mat-icon>done_all</mat-icon>
+                                </span>        
+                            </p>  
+                        </div>
+                        <div class="col-4 p-2 m-1 mt-3" *ngIf="!chat.check" style="border-radius: 5px; background-color: rgba(255,255, 255, 1); color: rgba(35,47,65, 1);">
+                            <p style="width: 100%;" *ngIf="chat.deleted">
+                                <i class="text-dark">This message has been deleted</i><br>
+                                <small class="float-right text-muted">{{chat.time}}</small>                            
+                            </p>
+                            <p style="width: 100%;" *ngIf="!chat.deleted">
+                                <span>{{chat.message}}</span><br>
+                                <small class="float-right text-muted">{{chat.time}}</small>                            
+                            </p>
+                        </div>
+                    </div>
+                    {{p}}
+                </div>
+            </div>
+            <div class="row p-1 bg-secondary" style="background-color: rgba(35,47,65, 1); margin-top: 0.05% !important;" *ngIf="verify">
+                <div class="col-11">
+                    <input type="text" name="usersMessage" class="form-control" placeholder="Type your message!" [(ngModel)]="message">
+                </div>
+                <div class="col-1 p-1" style="cursor: pointer">
+                    <img src="assets/send.png" alt="send message icon" (click)="saveMessage()">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- || (msg.recieverId == this.chatUserId) -->
